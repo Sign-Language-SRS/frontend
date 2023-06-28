@@ -1,1 +1,4 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# SRS Application Frontend
+
+## Setup
+Create an .env.local and set `API_PATH=<path-to-backend>`
