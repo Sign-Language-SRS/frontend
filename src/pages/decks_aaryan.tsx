@@ -6,6 +6,29 @@ import {
   faUmbrella,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Colors from https://tailwindcolor.com/
+// dark are 800s
+// light are 500s
+// Tailwind JIT wasn't working when colors were passed as props :(
+const colors = {
+  violet: {
+    light: "rgb(139, 92, 246)",
+    dark: "rgb(91, 33, 182)",
+  },
+  orange: {
+    light: "rgb(249, 115, 22)",
+    dark: "rgb(154, 52, 18)",
+  },
+  green: {
+    light: "rgb(34, 197, 94)",
+    dark: "rgb(22, 101, 52)",
+  },
+  yellow: {
+    light: "rgb(234, 179, 8)",
+    dark: "rgb(133, 77, 14)",
+  },
+};
+
 export default function DecksAaryan() {
   const today = new Date();
   return (
@@ -19,18 +42,18 @@ export default function DecksAaryan() {
         completedCards={15}
         totalCards={20}
         icon={faUmbrella}
-        nextReview={new Date(today.getTime() + 5 * 24 * 60 * 60 * 1000)}
-        bgColor="bg-violet-500"
-        shadowColor="rgb(91,33,182)"
+        nextReview={new Date(today.getTime() + 0 * 24 * 60 * 60 * 1000)}
+        bgColor={colors.violet.light}
+        shadowColor={colors.violet.dark}
       />
-      {/* <DeckAaryan
+      <DeckAaryan
         title={"Travel"}
         completedCards={3}
         totalCards={6}
         icon={faPlane}
         nextReview={new Date(today.getTime() + 1 * 24 * 60 * 60 * 1000)}
-        bgColor="bg-orange-500"
-        shadowColor="rgb(154,52,18)"
+        bgColor={colors.orange.light}
+        shadowColor={colors.orange.dark}
       />
       <DeckAaryan
         title={"Nature"}
@@ -38,8 +61,8 @@ export default function DecksAaryan() {
         totalCards={10}
         icon={faTree}
         nextReview={new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000)}
-        bgColor="bg-green-500"
-        shadowColor=""
+        bgColor={colors.green.light}
+        shadowColor={colors.green.dark}
       />
       <DeckAaryan
         title={"Fruit"}
@@ -47,9 +70,9 @@ export default function DecksAaryan() {
         totalCards={2}
         icon={faLemon}
         nextReview={new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000)}
-        bgColor="bg-yellow-500"
-        shadowColor="rgb(133,77,14)"
-      /> */}
+        bgColor={colors.yellow.light}
+        shadowColor={colors.yellow.dark}
+      />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProgressRing from "./ProgressRing";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-type TailwindColor = string;
 type rgbColor = string;
 
 interface DeckAaryanProps {
@@ -11,7 +10,7 @@ interface DeckAaryanProps {
   totalCards: number;
   icon: IconProp;
   nextReview: Date;
-  bgColor: TailwindColor;
+  bgColor: rgbColor;
   shadowColor: rgbColor;
 }
 
@@ -31,19 +30,22 @@ export default function DeckAaryan({
   let badgeBgColor, badgeTextColor, badgeText;
   if (daysUntilNextReview <= 0) {
     badgeBgColor = "bg-rose-500";
-    badgeTextColor = "text-white";
+    badgeTextColor = "rgb(255, 255, 255)";
     badgeText = "Due for review";
   } else {
     badgeBgColor = "bg-white";
-    badgeTextColor = bgColor.replace("bg", "text");
+    badgeTextColor = bgColor;
     badgeText = `Next review in ${daysUntilNextReview} days`;
   }
 
   return (
     <article
       id="card"
-      className={`${bgColor} rounded-2xl`}
-      style={{ boxShadow: `0px 8px 0px 0px ${shadowColor}` }}
+      className={"rounded-2xl"}
+      style={{
+        backgroundColor: bgColor,
+        boxShadow: `0px 8px 0px 0px ${shadowColor}`,
+      }}
     >
       <div id={"card-content"} className={"flex flex-col p-4"}>
         <div
