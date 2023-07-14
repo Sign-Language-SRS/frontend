@@ -42,7 +42,8 @@ export default function DeckAaryan({
   return (
     <article
       id="card"
-      className={`${bgColor} rounded-2xl shadow-[0px_8px_0px_0px_rgb(91,33,182)]`}
+      className={`${bgColor} rounded-2xl`}
+      style={{ boxShadow: `0px 8px 0px 0px ${shadowColor}` }}
     >
       <div id={"card-content"} className={"flex flex-col p-4"}>
         <div
@@ -55,20 +56,21 @@ export default function DeckAaryan({
             progress={completedCards / totalCards}
           />
           <figure className={"absolute"}>
-            <FontAwesomeIcon icon={icon} size={"4x"} />
+            <FontAwesomeIcon icon={icon} size={"4x"} className={"text-white"} />
           </figure>
         </div>
         <div className={"flex items-center justify-between py-2"}>
-          <h1 className={"text-3xl font-serif"}>{title}</h1>
-          <h2 className={"text-2xl font-sans"}>
+          <h1 className={"text-3xl font-serif text-white"}>{title}</h1>
+          <h2 className={"text-2xl font-sans text-white"}>
             {completedCards}/{totalCards}
           </h2>
         </div>
-        <span
-          className={`w-fit px-2 font-sans ${badgeTextColor} ${badgeBgColor} rounded-md`}
+        <p
+          className={`w-fit px-2 font-sans ${badgeBgColor} rounded-md`}
+          style={{ color: badgeTextColor }}
         >
           {badgeText}
-        </span>
+        </p>
       </div>
     </article>
   );
