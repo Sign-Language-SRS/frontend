@@ -31,7 +31,7 @@ export default function ProgressRing({
         strokeWidth={strokeWidth * 1.1}
         strokeDasharray={`${circumference} ${circumference}`}
         strokeDashoffset={offset}
-        stroke-linecap="round"
+        strokeLinecap="round"
         fill={"transparent"}
         r={radius}
         cx={width / 2}
