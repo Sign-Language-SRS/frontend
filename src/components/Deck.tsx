@@ -4,7 +4,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 type rgbColor = string;
 
-interface DeckAaryanProps {
+export interface DeckProps {
   title: string;
   completedCards: number;
   totalCards: number;
@@ -14,7 +14,7 @@ interface DeckAaryanProps {
   shadowColor: rgbColor;
 }
 
-export default function DeckAaryan({
+export default function Deck({
   title,
   completedCards,
   totalCards,
@@ -22,7 +22,7 @@ export default function DeckAaryan({
   nextReview,
   bgColor,
   shadowColor,
-}: DeckAaryanProps) {
+}: DeckProps) {
   const daysUntilNextReview = Math.ceil(
     (nextReview.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24),
   );

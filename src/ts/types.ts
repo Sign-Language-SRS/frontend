@@ -1,5 +1,5 @@
 // defining common types to use throughout
-export class Deck {
+export class DeckInType {
   name: string;
   created_on: Date;
   id: number;
